@@ -27,7 +27,7 @@ class User(db.Model):
     def __repr__(self):
         return ('[name: %r, description:%r, thumbmnail:%r, model:%r, download:'
                 ' %r]') % (self.name, self.description, self.thumbmnail,
-                         self.model, self.download)
+                           self.model, self.download)
 
 
 @app.route('/view/')
