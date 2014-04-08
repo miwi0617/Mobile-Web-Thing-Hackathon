@@ -61,7 +61,7 @@ def search():
 if __name__ == "__main__":
     app.run()
 
-h = [User('Chair', 'The most amazing chair you will find in the world', 'IMAGE', 'MODEL', 'DOWNLOAD'),
-User('Stool', 'One of the most amazing stools you will find in the world','IMAGE', 'MODEL', 'DOWNLOAD'),
-User('Bench', 'This is an awesome bench','IMAGE', 'MODEL', 'DOWNLOAD')]
+h = [User('Chair', 'The most amazing chair you will find in the world', 'Furniture/Chair_pic.png', 'Furniture/Chair.scad', 'DOWNLOAD'),
+User('Stool', 'One of the most amazing stools you will find in the world','Furniture/Stool_pic.png', 'Furniture/Stool1.scad', 'DOWNLOAD'),
+User('Bench', 'This is an awesome bench','bench.JPG', 'bench.scad', 'DOWNLOAD')]
 
