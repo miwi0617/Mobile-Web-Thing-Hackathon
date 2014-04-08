@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shelter Finder</title>
+  <!-- Bootstrap -->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script></head>
+
+<!--   <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+      </script>
+      <script src="javascript.js"></script>
+    </head>
+    <style type="text/css">
+    a {  text-decoration: none; color: #000000}
+    a:hover {  font-weight: bold; text-decoration: none;}
+    #test {text-decoration: none; color: #00AAFF;}
+    #test:hover {font-weight: normal; text-decoration: none;}
+    #p2 {  text-decoration: none; color: #000000}
+    #p2:hover {  font-weight: bold; text-decoration: none;}
+    .carousel-inner > .item > img { margin: 0 auto; }
+    </style>
+
+    <body>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <div class="container">
+        <div class="jumbotron">
+          <center><h1><p id="p2">Shelter Description</p></h1></center>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="row">
+               <div class="row">
+                <h2><p id="p2">Location</p></h2> 
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  </ol>
+
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="{{ location.image_url }}" alt="...">
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" data-slideex="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <h2><p id="p2">Location</p></h2>{{ location.location }}
+                
+              </div>
+              <div class="row">
+                <h2><p id="p2">Capacity</p></h2>{{ location.capacity }}
+                
+              </div>
+              <div class="row">
+                <h2><p id="p2">Contact</p></h2>{{ location.contact }}
+                
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>  
+      $(function ()  
+        { $("#example").popover();  
+      });  
+      </script> 
+    </body>
+    </html>
