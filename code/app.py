@@ -6,25 +6,28 @@ from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///week12.db'
 db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    location = db.Column(db.String(80), unique=False)
-    capacity = db.Column(db.String(80), unique=False)
-    contact = db.Column(db.String(80), unique=False)
-    image_url = db.Column(db.String(1024), unique=False)
+    name = db.Column(db.String(80), unique=False)
+    description = db.Column(db.String(512), unique=False)
+    thumbmnail = db.Column(db.String(1024), unique=False)
+    model = db.Column(db.String(1024), unique=False)
+    download = db.Column(db.String(1024), unique=False)
 
-    def __init__(self, location, capacity, contact, image_url):
-        self.location = location
-        self.capacity = capacity
-        self.contact = contact
-        self.image_url = image_url
+    def __init__(self, name, description, thumbmnail, model, download):
+        self.name = name
+        self.description = description
+        self.thumbmnail = thumbmnail
+        self.model = model
+        self.download = download
 
     def __repr__(self):
-        return '[location: %r, capacity:%r, contact:%r, URL:%r]' % (
-            self.location, self.capacity, self.contact, self.image_url)
+        return '[name: %r, description:%r, thumbmnail:%r, model:%r, download: '
+                '%r]' % (self.name, self.description, self.thumbmnail,
+                         self.model, self.download)
 
 
 @app.route('/view/')
@@ -32,28 +35,26 @@ class User(db.Model):
 @app.route('/view/<name>')
 def view(name=None):
 
-    location = User.query.filter_by(location=name).first()
+    name = User.query.filter_by(name=name).first()
 
-    return render_template('view.html', location=location)
+    return render_template('view.html', name=name)
 
 
 
 @app.route('/search', methods=['GET'])
 def search():
     try:
-        location = request.args.get('location', '')
-        capacity = request.args.get('capacity', '')
+        name = request.args.get('name', '')
+        description = request.args.get('description', '')
     except KeyError:
         return 'No brah, you cannot go there'
 
-    if location and capacity:
-        results = db.session.query(User).filter(User.location.like(location)).filter(User.capacity.like(capacity)).all()
-    elif location:
-        results = db.session.query(User).filter(User.location.like(location)).all()
-    elif capacity:
-        results = db.session.query(User).filter(User.capacity.like(capacity)).all()    
-    # results = db.session.query(User).filter(User.location.like(location)).filter(User.capacity.like(capacity)).all()
-    #results += db.session.query(User).filter(User.capacity.like(capacity)).all()
+#     if name and description:
+#         results = db.session.query(User).filter(User.name.like(name)).filter(User.description.like(description)).all()
+#     elif name:
+#         results = db.session.query(User).filter(User.name.like(name)).all()
+#     elif description:
+#         results = db.session.query(User).filter(User.description.like(description)).all()
 
     return render_template('search.html', results=results)
 
