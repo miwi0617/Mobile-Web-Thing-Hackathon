@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shelter Finder</title>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
-  <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script></head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>3D Ikea</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
-
-
 <body>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-  <div class="container">
-    <div class="clearfix">
-      <center><h1><p id="p2">Search Shelter</p></h1></center>
-         <table class="table table-condensed table-hover">
-          <thead>
-          <tr>
-          <td>Image</td>
-          <th>Location</th>
-          <th>Capacity</th>
-          <td>Contact</td>
-          </tr>
-          </thead>
-
-          {% for result in results %}
-            <tr>
-            <td>
-              <img src="{{ result.image_url }}" width="100px"/></td>
-              <td>{{ result.location }}</td>
-              <td>{{ result.capacity }}</td>
-              <td>{{ result.contact }}</td>
-            </tr>
-          {% endfor %}
-
-        </table>
-
-      </div>
-    </div>
-  </body>
+    <div class="container">
+      <ul class="thumbnails">
+          <li class="span3">
+            <a href="http://www.w3resource.com/php/php-home.php" class="thumbnail">
+                <img src="#" width="260" height="180" />
+          </a>
+      </li>
+      <li class="span4">
+        <a href="http://www.w3resource.com/sql/tutorials.php" class="thumbnail">
+          <img src="#" width="300" height="180" />
+      </a>
+  </li>
+  <li class="span5">
+    <a href="http://www.w3resource.com/javascript/javascript.php" class="thumbnail">
+      <img src="#" width="380" height="180" >
+  </a>
+</li>
+</ul>
+<hr>
+</div> <!-- /container -->
+</body>
 </html>
